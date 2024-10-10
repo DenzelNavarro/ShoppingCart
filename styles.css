@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ff5722; /* Lazada/Shopee-like orange */
+  --secondary-color: #ffcc00; /* Accent yellow */
+  --background-color: #f5f5f5; /* Light grey for background */
+  --white: #ffffff;
+  --text-color: #333;
+  --border-color: #ddd;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+}
+
+.title {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 25px 0;
+  font-size: 2rem;
+}
+
+#dessert-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dessert-card {
+  background-color: var(--white);
+  padding: 15px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: box-shadow 0.3s ease;
+}
+
+.dessert-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dessert-price {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  margin: 15px auto 0;
+  width: 20%;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+#cart-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cart-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+#cart-container {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: var(--white);
+  width: 300px;
+  height: 500px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 1rem;
+}
+
+#cart-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product:last-child {
+  border-bottom: none;
+}
+
+.product-count {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+#cart-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+#clear-cart-btn {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#clear-cart-btn:hover {
+  background-color: #ff9900;
+}
+
+@media (min-width: 768px) {
+  #dessert-card-container {
+    justify-content: flex-start;
+  }
+
+  .dessert-card {
+    width: 23%;
+  }
+
+  #cart-container {
+    width: 350px;
+  }
+}
